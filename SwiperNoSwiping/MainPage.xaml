@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:SwiperNoSwiping" mc:Ignorable="d" x:Class="SwiperNoSwiping.MainPage">
+    <StackLayout>
+        <Frame BackgroundColor="Gold" Padding="24" CornerRadius="0">
+            <Label Text="True False Quiz with Swipe" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36"/>
+        </Frame>
+        <Button Text="Start Quiz" x:Name="StartQuiz" Clicked="StartButton_Clicked"/>
+        <Label x:Name="Instructions" Text="Swipe: RIGHT = TRUE 
+               LEFT = FALSE" HorizontalTextAlignment="Center" TextColor="Blue" FontSize="18"></Label>
+
+        <Image x:Name="Images" IsVisible="false"/>
+        <Label  x:Name="QuizResults" HorizontalOptions="Center" FontSize="Large"/>
+        <BoxView VerticalOptions="FillAndExpand">
+            <BoxView.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Left" Swiped="SwipeLeft"/>
+                <SwipeGestureRecognizer Direction="Right" Swiped="SwipeRight"/>
+                
+            </BoxView.GestureRecognizers>
+        </BoxView>
+        <Label x:Name="SwipeLabel" Text="SWIPE ABOVE HERE" HorizontalTextAlignment="Center" TextColor="DarkRed" FontSize="24"></Label>
+    </StackLayout>
+</ContentPage>
